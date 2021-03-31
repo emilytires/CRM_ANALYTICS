@@ -58,7 +58,7 @@ In this section, we will analyze important metrics related to crm analytics such
     
     segment : segment customers using the qcut function in the scaled_cltv_c
 
-  # Calculation of Customer Lifetime Metrics
+  Calculation of Customer Lifetime Metrics
   
   cltv['avg_order_value'] = cltv["total_price"] / cltv['total_transaction']
   
