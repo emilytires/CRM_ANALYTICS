@@ -60,31 +60,31 @@ In this section, we will analyze important metrics related to crm analytics such
 
   Calculation of Customer Lifetime Metrics
   
-  cltv['avg_order_value'] = cltv["total_price"] / cltv['total_transaction']
+    cltv['avg_order_value'] = cltv["total_price"] / cltv['total_transaction']
   
-  cltv["purchase_frequency"] = cltv['total_transaction'] / cltv.shape[0]
+    cltv["purchase_frequency"] = cltv['total_transaction'] / cltv.shape[0]
   
-  repeat_rate = cltv[cltv["total_transaction"] > 1].shape[0] / cltv.shape[0]
+    repeat_rate = cltv[cltv["total_transaction"] > 1].shape[0] / cltv.shape[0]
   
-  churn_rate = 1 - repeat_rate
+    churn_rate = 1 - repeat_rate
   
-  cltv['profit_margin'] = cltv['total_price'] * 0.05
+    cltv['profit_margin'] = cltv['total_price'] * 0.05
   
-  cltv['customer_value'] = cltv['avg_order_value'] * cltv["purchase_frequency"]
+    cltv['customer_value'] = cltv['avg_order_value'] * cltv["purchase_frequency"]
   
-  cltv['cltv_c'] = (cltv['customer_value'] / churn_rate) * cltv['profit_margin']
+    cltv['cltv_c'] = (cltv['customer_value'] / churn_rate) * cltv['profit_margin']
     
   4- Customer LifeTime Value Prediction : This is statistical way to learn your customer segments. According to CLV allows us to focus on the long-term results, not the short-term profits.
   
   The modelling & evaluation process is going to be the following:
   
-   Fit and evaluate BG/NBD model for frequency prediction (Beta Geometric/Negative Binomial Distribution)
+    Fit and evaluate BG/NBD model for frequency prediction (Beta Geometric/Negative Binomial Distribution)
    
-   Fit and evaluate Gamma-Gamma model for monetary value prediction
+    Fit and evaluate Gamma-Gamma model for monetary value prediction
    
-   Combine 2 models into CLV model and compare to baseline
+    Combine 2 models into CLV model and compare to baseline
    
-   Refit the model on the entire dataset
+    Refit the model on the entire dataset
    
    Final table features:
    
