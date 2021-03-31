@@ -28,14 +28,23 @@ In this section, we will analyze important metrics related to crm analytics such
 
   Final table features:
     total_transaction : how many transactions each customer makes
+    
     total_unit : how many orders each customer placed
+    
     total_price : how much money each customer spent
+    
     avg_order_value
+    
     purchase_frequency
+    
     profit_margin
+    
     customer_value
+    
     cltv_c
+    
     SCALED_CLTV_C : scaling of cltv_c (range 1-100)
+    
     segment : segment customers using the qcut function in the scaled_cltv_c
 
   # Calculation of Customer Lifetime Metrics
